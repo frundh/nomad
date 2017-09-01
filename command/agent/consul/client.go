@@ -17,6 +17,7 @@ import (
 	cstructs "github.com/hashicorp/nomad/client/structs"
 	"github.com/hashicorp/nomad/helper"
 	"github.com/hashicorp/nomad/nomad/structs"
+	"os"
 )
 
 const (
@@ -579,6 +580,9 @@ func (c *ServiceClient) serviceRegs(ops *operations, allocID string, service *st
 		ip = net.IP
 		port = net.PortMap[service.PortLabel]
 	}
+
+	host_ip := os.Getenv("HOST_IP")
+	if host_ip != "" { ip = host_ip }
 
 	// Build the Consul Service registration request
 	serviceReg := &api.AgentServiceRegistration{
