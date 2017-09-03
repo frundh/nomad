@@ -1,0 +1,4 @@
+package: github.com/frundh/nomad
+import:
+  - package: github.com/hashicorp/nomad
+    version: v0.6.2
