@@ -582,8 +582,8 @@ func (c *ServiceClient) serviceRegs(ops *operations, allocID string, service *st
 	}
 
 	host_ip := os.Getenv("HOST_IP")
-	fmt.Println("HOST_IP: ", host_ip)
 	if host_ip != "" { ip = host_ip }
+	c.logger.Printf("[INFO] consul.sync: HOST_IP: '%h', using IpAddress: 'i'", host_ip, ip)
 
 	// Build the Consul Service registration request
 	serviceReg := &api.AgentServiceRegistration{
