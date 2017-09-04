@@ -3,7 +3,7 @@ package client
 import (
 	"github.com/hashicorp/nomad/client/driver"
 	cstructs "github.com/hashicorp/nomad/client/structs"
-	"github.com/hashicorp/nomad/command/agent/consul"
+	"github.com/frundh/nomad/command/agent/consul"
 	"github.com/hashicorp/nomad/nomad/structs"
 )
 
