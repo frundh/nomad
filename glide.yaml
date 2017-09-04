@@ -1,4 +1,0 @@
-package: github.com/frundh/nomad
-import:
-- package: github.com/hashicorp/nomad
-  repo: git@github.com:frundh/nomad.git
