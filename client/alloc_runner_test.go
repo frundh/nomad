@@ -14,7 +14,7 @@ import (
 	"github.com/boltdb/bolt"
 	"github.com/hashicorp/consul/api"
 	"github.com/hashicorp/go-multierror"
-	"github.com/hashicorp/nomad/command/agent/consul"
+	"github.com/frundh/nomad/command/agent/consul"
 	"github.com/hashicorp/nomad/nomad/mock"
 	"github.com/hashicorp/nomad/nomad/structs"
 	"github.com/hashicorp/nomad/testutil"
