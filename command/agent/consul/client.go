@@ -583,7 +583,7 @@ func (c *ServiceClient) serviceRegs(ops *operations, allocID string, service *st
 
 	host_ip := os.Getenv("HOST_IP")
 	if host_ip != "" { ip = host_ip }
-	c.logger.Printf("[INFO] consul.sync: HOST_IP: '%h', using IpAddress: 'i'", host_ip, ip)
+	c.logger.Printf("[INFO] consul.sync: HOST_IP: '%s', using service ip address: '%s'", host_ip, ip)
 
 	// Build the Consul Service registration request
 	serviceReg := &api.AgentServiceRegistration{
@@ -645,6 +645,11 @@ func (c *ServiceClient) checkRegs(ops *operations, allocID, serviceID string, se
 			portLabel = service.PortLabel
 		}
 		ip, port := task.Resources.Networks.Port(portLabel)
+
+		host_ip := os.Getenv("HOST_IP")
+		if host_ip != "" { ip = host_ip }
+		c.logger.Printf("[INFO] consul.sync: HOST_IP: '%s', using check ip address: '%s'", host_ip, ip)
+
 		checkReg, err := createCheckReg(serviceID, checkID, check, ip, port)
 		if err != nil {
 			return nil, fmt.Errorf("failed to add check %q: %v", check.Name, err)
