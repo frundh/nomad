@@ -17,7 +17,7 @@ import (
 	version "github.com/hashicorp/go-version"
 	"github.com/hashicorp/nomad/client"
 	clientconfig "github.com/hashicorp/nomad/client/config"
-	"github.com/frundh/nomad/command/agent/consul"
+	"github.com/hashicorp/nomad/command/agent/consul"
 	"github.com/hashicorp/nomad/nomad"
 	"github.com/hashicorp/nomad/nomad/structs"
 	"github.com/hashicorp/nomad/nomad/structs/config"

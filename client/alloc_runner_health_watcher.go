@@ -10,7 +10,7 @@ import (
 
 	"github.com/hashicorp/consul/api"
 	cstructs "github.com/hashicorp/nomad/client/structs"
-	"github.com/frundh/nomad/command/agent/consul"
+	"github.com/hashicorp/nomad/command/agent/consul"
 	"github.com/hashicorp/nomad/helper"
 	"github.com/hashicorp/nomad/nomad/structs"
 )

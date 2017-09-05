@@ -14,7 +14,7 @@ import (
 	memdb "github.com/hashicorp/go-memdb"
 	"github.com/hashicorp/nomad/client/config"
 	"github.com/hashicorp/nomad/client/fingerprint"
-	"github.com/frundh/nomad/command/agent/consul"
+	"github.com/hashicorp/nomad/command/agent/consul"
 	"github.com/hashicorp/nomad/helper"
 	"github.com/hashicorp/nomad/nomad"
 	"github.com/hashicorp/nomad/nomad/mock"
