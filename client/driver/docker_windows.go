@@ -1,3 +1,5 @@
+// +build ignore
+
 package driver
 
 import docker "github.com/fsouza/go-dockerclient"
