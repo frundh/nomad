@@ -925,13 +925,13 @@ func (d *DockerDriver) createContainerConfig(ctx *ExecContext, task *structs.Tas
 	memLimit := int64(task.Resources.MemoryMB) * 1024 * 1024
 
 	if len(driverConfig.Logging) == 0 {
-		if runtime.GOOS != "darwin" {
+		if runtime.GOOS != "windows" {
 			d.logger.Printf("[DEBUG] driver.docker: Setting default logging options to syslog and %s", syslogAddr)
 			driverConfig.Logging = []DockerLoggingOpts{
 				{Type: "syslog", Config: map[string]string{"syslog-address": syslogAddr}},
 			}
 		} else {
-			d.logger.Printf("[DEBUG] driver.docker: deferring logging to docker on Docker for Mac")
+			d.logger.Printf("[DEBUG] driver.docker: deferring logging to docker on Docker for Windows")
 		}
 	}
 
