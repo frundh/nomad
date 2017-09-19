@@ -7,6 +7,7 @@ import (
 
 	"github.com/hashicorp/nomad/client/config"
 	"github.com/hashicorp/nomad/nomad/structs"
+	"os"
 )
 
 const (
@@ -106,6 +107,10 @@ func (f *NetworkFingerprint) Fingerprint(cfg *config.Config, node *structs.Node)
 	if len(nwResources) > 0 {
 		node.Attributes["unique.network.ip-address"] = nwResources[0].IP
 	}
+
+	s_ip := os.Getenv("CONSUL_SERVICE_IP")
+	if s_ip != "" { node.Attributes["unique.network.ip-address"] = s_ip }
+	f.logger.Printf("[INFO] network: 'unique.network.ip-address': '%s'", node.Attributes["unique.network.ip-address"])
 
 	// return true, because we have a network connection
 	return true, nil
