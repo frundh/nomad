@@ -878,7 +878,7 @@ func (d *DockerDriver) containerBinds(driverConfig *DockerDriverConfig, taskDir 
 		// Otherwise, we assume we receive a relative path binding in the format relative/to/task:/also/in/container
 		if driverConfig.VolumeDriver == "" {
 			// Expand path relative to alloc dir
-			parts[0] = filepath.Join(filepath.Join("./", taskDir.Dir), parts[0])
+			parts[0] = filepath.Join("." + taskDir.Dir, parts[0])
 		}
 
 		binds = append(binds, strings.Join(parts, ":"))
